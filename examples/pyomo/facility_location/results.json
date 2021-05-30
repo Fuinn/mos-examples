@@ -1,0 +1,75 @@
+{
+    "Problem": [
+        {
+            "Lower bound": 6.43118493935767,
+            "Name": "unknown",
+            "Number of constraints": 68,
+            "Number of nonzeros": 191,
+            "Number of objectives": 1,
+            "Number of variables": 71,
+            "Sense": "minimize",
+            "Upper bound": 6.43118493935767
+        }
+    ],
+    "Solution": [
+        {
+            "number of solutions": 1,
+            "number of solutions displayed": 1
+        },
+        {
+            "Constraint": "No values",
+            "Gap": 0.0,
+            "Message": null,
+            "Objective": {
+                "cost": {
+                    "Value": 6.431184939357673
+                }
+            },
+            "Problem": {},
+            "Status": "optimal",
+            "Variable": {
+                "x[3,4]": {
+                    "Value": 1.0
+                },
+                "x[6,1]": {
+                    "Value": 1.0
+                },
+                "x[6,2]": {
+                    "Value": 1.0
+                },
+                "x[6,3]": {
+                    "Value": 1.0
+                },
+                "x[6,5]": {
+                    "Value": 1.0
+                },
+                "x[9,6]": {
+                    "Value": 1.0
+                },
+                "y[3]": {
+                    "Value": 1.0
+                },
+                "y[6]": {
+                    "Value": 1.0
+                },
+                "y[9]": {
+                    "Value": 1.0
+                }
+            }
+        }
+    ],
+    "Solver": [
+        {
+            "Error rc": 0,
+            "Statistics": {
+                "Branch and bound": {
+                    "Number of bounded subproblems": "1",
+                    "Number of created subproblems": "1"
+                }
+            },
+            "Status": "ok",
+            "Termination condition": "optimal",
+            "Time": 0.013027191162109375
+        }
+    ]
+}
