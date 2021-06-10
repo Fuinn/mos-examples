@@ -17,4 +17,4 @@ Steps to use with the MOS [Python Interface package](https://github.com/Fuinn/mo
 * Alternatively, setting of local environment variables will allow use of the ``*api.*`` file directly
 * The environment variables to set are:
 
-The model may be specified, adjusted, and solved through the ``*api.*`` file to the user's interests.
+The model may then be specified, adjusted, and solved through the ``*api.*`` file to the user's interests.
