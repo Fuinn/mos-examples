@@ -25,9 +25,9 @@ The model may then be specified, adjusted, and solved through the ``*api.*`` fil
 Contributions of new and improved models are very welcome.
 
 1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
+2. Create your Branch (`git checkout -b NewModel`)
+3. Commit your Changes (`git commit -m 'New Model'`)
+4. Push to the Branch (`git push origin NewModel`)
 5. Open a Pull Request
 
 
