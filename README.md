@@ -16,6 +16,7 @@ Steps to use with the MOS [Python Interface package](https://github.com/Fuinn/mo
 * Adjustment of ``*api.*`` file to include URL and authentication token
 * Alternatively, setting of local environment variables will allow use of the ``*api.*`` file directly
 * The environment variables to set are: ``MOS_BACKEND_TOKEN``, ``MOS_BACKEND_HOST``, ``MOS_BACKEND_PORT``
+* If set in a file named ``.env`` at the root of the repository, the api example will automatically load them
 
 The model may then be specified, adjusted, and solved through the ``*api.*`` file to the user's interests.
 
