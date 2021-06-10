@@ -9,5 +9,10 @@ The ``*model.py`` example may be uploaded to MOS Frontend directly, ready to be 
 
 ## Use with MOS Interface packages
 
-[Python Interface package](https://github.com/Fuinn/mos-interface-py)
-[Julia Interface package](https://github.com/Fuinn/mos-interface-jl)
+Steps to use with the MOS [Python Interface package](https://github.com/Fuinn/mos-interface-py) or 
+[Julia Interface package](https://github.com/Fuinn/mos-interface-jl):
+
+* Adjustment of ``*api.py`` file to include URL and authentication token
+* Alternatively setting of local environment variables will allow use of the ``*api.py`` file directly
+
+The model may be specified, adjusted, and solved through the ``*api.py`` file to the user's interests.
