@@ -18,3 +18,22 @@ Steps to use with the MOS [Python Interface package](https://github.com/Fuinn/mo
 * The environment variables to set are:
 
 The model may then be specified, adjusted, and solved through the ``*api.*`` file to the user's interests.
+
+<!-- CONTRIBUTING -->
+## Contributing
+
+Contributions of new and improved models are very welcome.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+
+
+<!-- LICENSE -->
+## License
+
+Distributed under the BSD-3-Clause License. See `LICENSE` for more information.
+
