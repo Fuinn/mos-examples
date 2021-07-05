@@ -3,7 +3,7 @@ Optimization model examples ready for use with [MOS](https://fuinn.ie/mos).
 
 Examples are arranged by modeling system (e.g. CVXPY, JuMP). Associated with each example are two file types, ``*model.*`` and ``*api.*``, along with any data files associated with the example.
 
-## Use with [MOS Frontend](https://mos.fuinn.ie)
+## Use with [MOS Frontend](http://mos.fuinn.ie)
 The ``*model.*`` example may be uploaded to MOS Frontend directly, ready to be provided with mos-examples data or user data, and solved.
 
 
@@ -16,9 +16,9 @@ Steps to use with the MOS [Python Interface package](https://github.com/Fuinn/mo
 * Adjustment of ``*api.*`` file to include URL and authentication token
 * Alternatively, setting of local environment variables will allow use of the ``*api.*`` file directly
 * The environment variables to set are: ``MOS_BACKEND_TOKEN``, ``MOS_BACKEND_HOST``, ``MOS_BACKEND_PORT``
-* If set in a file named ``.env`` at the root of the repository, the api example will automatically load them
+* If set in a file named ``.env`` at the root of the repository, the api example will automatically load them. An example ``.env`` file is included here, ready for operation with ``mos.fuinn.ie`` once a token is added to the file
 
-The model may then be specified, adjusted, and solved through the ``*api.*`` file to the user's interests.
+The model may then be specified, adjusted, and solved through the ``*api.*`` file, from the repository root, to the user's interests.
 
 <!-- CONTRIBUTING -->
 ## Contributing
