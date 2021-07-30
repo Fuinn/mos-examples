@@ -13,27 +13,33 @@ D = np.load(D_file)
 D_hat_file = 'D_hat.npy'
 D_hat = np.load(D_hat_file)
 
-#@ Input File: O_file
-O_file = 'O.npy'
-O = np.load(O_file)
 
 #@ Input File: s_file
-s_file = 'sequences.json'
+#s_file = 'sequences.json'
+s_file = open('sequences.json', 'r')
 
 #@ Helper Object: sequences
-with open(s_file,'r') as f:
-    sequences = json.load(f)
+#with open(s_file,'r') as f:
+#    sequences = json.load(f)
+sequences=json.load(s_file)
+print(sequences,type(sequences))
+
 
 #@ Helper Object: aa_idx
 aa_idx = 'ACDEFGHIKLMNPQRSTVWY*-'
 
 
-#@ Helper Object: O
+# elper Object: O
 O = {i: np.zeros((len(sequences[0]), 22)) for i in range(len(sequences))}
 for i in O.keys():
     seq = sequences[i]
     for j, aa in enumerate(seq):
         O[i][j, aa_idx.index(aa)] = 1
+print('O',len(O),len(sequences),len(sequences[0]))        
+# elper Object: O_
+O_ = np.zeros((len(sequences),len(sequences[0]) * 22))
+for i in O:
+    O_[i] = O[i].ravel()
 
 
 #def solve_library(O, lib_lim, n_templates, bins=1e3, verbose=True, parallel=True, approximate=False, time_limit=0, threads=0):
@@ -56,6 +62,10 @@ n_targets = len(O)
 
 #@ Helper Object: n_var_pos
 n_var_pos = len(O[0])
+
+#@ Helper Object: lib_lim
+lib_lim = 6
+
 
 #    n_targets = len(sequences)
 #    n_var_pos = len(sequences[0])
@@ -88,17 +98,24 @@ one_degree_codon = cvxpy.sum(G, axis=1) == 1
 # could O be comressed into a 6*5 or 6*22 thing?
 # or just create multiple constraints as a quick fix
 
-O_eile = np.load('O_eile.npy')
-O_eile = np.reshape(O_eile,(6,5*22))
-i=0
-# Constrain "and" for all positions (check for cover of target)
-# Need to vectorize this
-expression1 = O_eile * cvxpy.reshape(C,(110)) 
-expression2 = n_var_pos * np.ones(n_targets)
-expression3 = n_var_pos * (1 - B)
-print('shapes',np.shape(expression1),np.shape(expression2),np.shape(expression3))
-expression = expression1 - expression2 + expression3
+
+
+
+#@ Function: expression
+expression = (O_ @ cvxpy.vec(C)) - (n_var_pos * np.ones(n_targets)) + (n_var_pos * (1 - B))
+#print('shapes',np.shape(expression1),np.shape(expression2),np.shape(expression3))
+#expression = expression1 - expression2 + expression3
 #expression = cvxpy.sum(cvxpy.multiply(O_eile, cvxpy.reshape(C,(110,1)))) - n_var_pos + n_var_pos * (1 - B[i])
+
+#@ Constraint: cover_lb
+#@ Description: Constrain "and" for all positions (check for cover of target)
+cover_lb = expression >= 0
+#@ Constraint: cover_ub
+#@ Description: Constrain "and" for all positions (check for cover of target)
+cover_ub = expression <= n_var_pos
+
+
+
 
 #@ Function: oligo
 #@ Description: oligo expression
@@ -120,7 +137,7 @@ oligo_lb = oligo <= 1
 lib_size = cvxpy.sum(G * cvxpy.log(cvxpy.sum(D, axis=1)))
 
 
-lib_lim = 6
+
 
 #@ Constraint: library
 #@ Description: Constrain library size
@@ -134,10 +151,8 @@ objective = cvxpy.sum(t)
 #@ Description: Maximize covered sequences subject to constraints
 constraints = []
 constraints.append(one_degree_codon)
-# tricky constraints here
-constraints.append(expression >= 0)
-constraints.append(expression <= n_var_pos)
-# tricky constraints here
+constraints.append(cover_ub)
+constraints.append(cover_lb)
 constraints.append(oligo_ub)
 constraints.append(oligo_lb)
 constraints.append(library)
@@ -151,8 +166,8 @@ solver = "ECOS_BB"
 problem.solve(solver=solver, verbose=True)
 
 
-#@ Helper Object: solution
-#@ Description: Make all variables available within a dictionary
+
+# Make all variables available within a dictionary
 solution = {
     'binary_coverage': t.value,
     'coverage_count': np.sum(B.value),
