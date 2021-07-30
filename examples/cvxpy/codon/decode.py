@@ -93,7 +93,11 @@ O_eile = np.reshape(O_eile,(6,5*22))
 i=0
 # Constrain "and" for all positions (check for cover of target)
 # Need to vectorize this
-expression = O_eile * cvxpy.reshape(C,(110,1)) - n_var_pos + n_var_pos * (1 - B[i])
+expression1 = O_eile * cvxpy.reshape(C,(110)) 
+expression2 = n_var_pos * np.ones(n_targets)
+expression3 = n_var_pos * (1 - B)
+print('shapes',np.shape(expression1),np.shape(expression2),np.shape(expression3))
+expression = expression1 - expression2 + expression3
 #expression = cvxpy.sum(cvxpy.multiply(O_eile, cvxpy.reshape(C,(110,1)))) - n_var_pos + n_var_pos * (1 - B[i])
 
 #@ Function: oligo
