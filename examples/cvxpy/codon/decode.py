@@ -3,6 +3,7 @@
 
 import cvxpy
 import numpy as np
+import json
 
 #@ Input File: D_file
 D_file = 'D.npy'
@@ -20,7 +21,8 @@ O = np.load(O_file)
 s_file = 'sequences.json'
 
 #@ Helper Object: sequences
-sequences = json.load(s_file)
+with open(s_file,'r') as f:
+    sequences = json.load(f)
 
 #@ Helper Object: aa_idx
 aa_idx = 'ACDEFGHIKLMNPQRSTVWY*-'
@@ -68,13 +70,13 @@ t = cvxpy.Variable(n_targets, boolean=True)
 G = cvxpy.Variable((n_var_pos, n_codons), boolean=True)
 
 #@ Variable: B
-B = cvxpy.Variable((n_targets), boolean=True)
+B = cvxpy.Variable(n_targets, boolean=True)
 
 #@ Function: C
 #@ Description: Define relationship between C, G, and D
 # D_hat 841x22, G 5 * 841
 C = G * D_hat
-
+print('c shape',np.shape(C))
 #@ Constraint: one_degree_codon
 #@ Description: Constrain only one deg. codon can be used
 one_degree_codon = cvxpy.sum(G, axis=1) == 1
@@ -86,24 +88,24 @@ one_degree_codon = cvxpy.sum(G, axis=1) == 1
 # could O be comressed into a 6*5 or 6*22 thing?
 # or just create multiple constraints as a quick fix
 
+O_eile = np.load('O_eile.npy')
+O_eile = np.reshape(O_eile,(6,5*22))
+i=0
 # Constrain "and" for all positions (check for cover of target)
 # Need to vectorize this
-for i in range(n_targets):
-    expression = cvxpy.sum(cvxpy.multiply(O[i], C)) - n_var_pos + n_var_pos * (1 - B[i])
-    constraints.append(expression >= 0)
-    constraints.append(expression <= n_var_pos)
-
+expression = O_eile * cvxpy.reshape(C,(110,1)) - n_var_pos + n_var_pos * (1 - B[i])
+#expression = cvxpy.sum(cvxpy.multiply(O_eile, cvxpy.reshape(C,(110,1)))) - n_var_pos + n_var_pos * (1 - B[i])
 
 #@ Function: oligo
 #@ Description: oligo expression
-oligo = - cvxpy.sum(B, axis=1) + (n_templates + 1) * t 
+oligo = - cvxpy.sum(B) + (2 * t)
     
 #@ Constraint: oligo_ub    
 #@ Description: Constrain "or" for all oligos (check whether target is covered by at least one oligo)
 oligo_ub =  oligo >= 0
 #@ Constraint: oligo_lb    
 #@ Description: Constrain "or" for all oligos (check whether target is covered by at least one oligo)
-oligo_lb = oligo <= n_templates
+oligo_lb = oligo <= 1
 
 
 # Constrain library size for a single oligo
@@ -111,7 +113,10 @@ oligo_lb = oligo <= n_templates
 
 
 #@ Function: lib_size
-lib_size = cvxpy.sum(G[0] * cvxpy.log(cvxpy.sum(D, axis=1)))
+lib_size = cvxpy.sum(G * cvxpy.log(cvxpy.sum(D, axis=1)))
+
+
+lib_lim = 6
 
 #@ Constraint: library
 #@ Description: Constrain library size
@@ -126,6 +131,9 @@ objective = cvxpy.sum(t)
 constraints = []
 constraints.append(one_degree_codon)
 # tricky constraints here
+constraints.append(expression >= 0)
+constraints.append(expression <= n_var_pos)
+# tricky constraints here
 constraints.append(oligo_ub)
 constraints.append(oligo_lb)
 constraints.append(library)
@@ -134,7 +142,7 @@ problem = cvxpy.Problem(cvxpy.Maximize(objective), constraints)
 
 #@ Solver: solver
 #@ Description: Solving the problem
-solver = "ECOS"
+solver = "ECOS_BB"
 
 problem.solve(solver=solver, verbose=True)
 
@@ -143,11 +151,11 @@ problem.solve(solver=solver, verbose=True)
 #@ Description: Make all variables available within a dictionary
 solution = {
     'binary_coverage': t.value,
-    'coverage_count': np.sum(B.value, axis=1),
-    'codon_selection': np.stack([G[x].value for x in G]),
+    'coverage_count': np.sum(B.value),
+    'codon_selection': G.value,
     'problem': problem
 }
     
 
-
+print(solution)
 
