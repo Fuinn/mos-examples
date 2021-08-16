@@ -58,13 +58,24 @@ lib_lim = 6
 # Set up variables
 
 #@ Variable: t
-t = cvxpy.Variable(n_targets, boolean=False)
+#@ Description: description
+#@ Labels: targets
+t = cvxpy.Variable(n_targets, nonneg=True, boolean=False)
+targets = dict([(i, sequences[i]) for i in range(n_targets)])
 
 #@ Variable: G
-G = cvxpy.Variable((n_var_pos, n_codons), boolean=False)
+#@ Labels: G_labels
+G = cvxpy.Variable((n_var_pos, n_codons), nonneg=True, boolean=False)
+
+G_labels = {}
+for i in range(n_var_pos):
+    for j in range(n_codons):
+        G_labels[(i,j)] = 'pos. {}, codon {}'.format(i, j)
+
 
 #@ Variable: B
-B = cvxpy.Variable(n_targets, boolean=False)
+#@ Labels: targets
+B = cvxpy.Variable(n_targets, nonneg=True, boolean=False)
 
 #@ Function: C
 #@ Description: Define relationship between C, G, and D
@@ -76,25 +87,31 @@ one_degree_codon = cvxpy.sum(G, axis=1) == 1
 
 
 #@ Function: expression
+#@ Labels: targets
 expression = (O_ @ cvxpy.vec(C)) - (n_var_pos * np.ones(n_targets)) + (n_var_pos * (1 - B))
 
 #@ Constraint: cover_lb
 #@ Description: Constrain "and" for all positions (check for cover of target)
+#@ Labels: targets
 cover_lb = expression >= 0
 #@ Constraint: cover_ub
 #@ Description: Constrain "and" for all positions (check for cover of target)
+#@ Labels: targets
 cover_ub = expression <= n_var_pos
 
 
 #@ Function: oligo
 #@ Description: oligo expression
+#@ Labels: targets
 oligo = - B + (2 * t)
     
 #@ Constraint: oligo_ub    
 #@ Description: Constrain "or" for all oligos (check whether target is covered by at least one oligo)
+#@ Labels: targets
 oligo_ub =  oligo >= 0
 #@ Constraint: oligo_lb    
 #@ Description: Constrain "or" for all oligos (check whether target is covered by at least one oligo)
+#@ Labels: targets
 oligo_lb = oligo <= 1
 
 
@@ -119,9 +136,6 @@ constraints.append(cover_lb)
 constraints.append(oligo_ub)
 constraints.append(oligo_lb)
 constraints.append(library)
-constraints.append(0<=t)
-constraints.append(0<=G)
-constraints.append(0<=B)
 constraints.append(t<=1)
 constraints.append(G<=1)
 constraints.append(B<=1)
