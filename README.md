@@ -7,7 +7,13 @@ Examples are arranged by modeling system (e.g. CVXPY, JuMP). Associated with eac
 
 Examples from:
 * Finance; [portfolio allocation](./examples/cvxpy/portfolio)
-* Aerospace [satellite scheduling](./examples/gams/satellite)
+* Machine learning; [lasso regression](./examples/cvxpy/lasso)
+* Logistics; [Transportation](./examples/cvxpy/transportation), [facility location](./examples/pyomo/facility_location)
+* Aerospace; [satellite scheduling](./examples/gams/satellite)
+* Computable general equilibrium; [macroeconomic modeling](./examples/gams/mpsge)
+* Energy; [AC optimal power flow](./examples/optmod/acopf), [DC optimal power flow](./examples/optmod/dcopf), [gas trade](./examples/gams/gtm), [unit commitment](./examples/jump/unit_commitment)
+* Climate policy; [dice](./examples/gams/dice)
+* Games: [sudoku](./examples/jump/sudoku)
 
 
 ## Use with [MOS Frontend](http://mos.fuinn.ie)
