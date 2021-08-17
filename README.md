@@ -12,7 +12,7 @@ Examples from:
 * Aerospace: [satellite scheduling](./examples/gams/satellite)
 * Energy: [AC optimal power flow](./examples/optmod/acopf), [DC optimal power flow](./examples/optmod/dcopf), [gas trade](./examples/gams/gtm), [unit commitment](./examples/jump/unit_commitment)
 * Climate policy: [Dice model](./examples/gams/dice)
-* Macroeconomics [computable general equilibrium](./examples/gams/mpsge)
+* Macroeconomics: [computable general equilibrium](./examples/gams/mpsge)
 * Resource allocation: [knapsack problem](./examples/jump/knapsack)
 * Games: [sudoku](./examples/jump/sudoku)
 
