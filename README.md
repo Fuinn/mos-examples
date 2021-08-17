@@ -3,6 +3,13 @@ Optimization model examples ready for use with [MOS](https://fuinn.ie/mos).
 
 Examples are arranged by modeling system (e.g. CVXPY, JuMP). Associated with each example are two file types, ``*model.*`` and ``*api.*``, along with any data files associated with the example.
 
+## Application areas
+
+Examples from:
+* Finance [portfolio allocation](./examples/cvxpy/portfolio)
+* Aerospace [satellite scheduling](./examples/gams/satellite)
+
+
 ## Use with [MOS Frontend](http://mos.fuinn.ie)
 The ``*model.*`` example may be uploaded to MOS Frontend directly, ready to be provided with mos-examples data or user data, and solved.
 
