@@ -6,7 +6,7 @@ Examples are arranged by modeling system (e.g. CVXPY, JuMP). Associated with eac
 ## Application areas
 
 Examples from:
-* Finance, [portfolio allocation](./examples/cvxpy/portfolio)
+* Finance; [portfolio allocation](./examples/cvxpy/portfolio)
 * Aerospace [satellite scheduling](./examples/gams/satellite)
 
 
