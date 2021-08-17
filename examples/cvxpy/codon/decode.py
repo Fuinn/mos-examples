@@ -78,8 +78,14 @@ for i in range(n_var_pos):
 B = cvxpy.Variable(n_targets, nonneg=True, boolean=False)
 
 #@ Function: C
-#@ Description: Define relationship between C, G, and D
+#@ Labels: C_labels
 C = G * D_hat
+C_labels = {}
+for i in range(n_var_pos):
+    for j in range(len(aa_idx)):
+        C_labels[(i,j)] = 'pos. {}, {}'.format(i, aa_idx[j])
+
+
 
 #@ Constraint: one_degree_codon
 #@ Description: Constrain only one deg. codon can be used
