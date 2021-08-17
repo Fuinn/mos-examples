@@ -10,9 +10,9 @@ Examples from:
 * Machine learning: [lasso regression](./examples/cvxpy/lasso)
 * Logistics: [transportation](./examples/cvxpy/transportation), [facility location](./examples/pyomo/facility_location)
 * Aerospace: [satellite scheduling](./examples/gams/satellite)
-* Macroeconomics [Computable general equilibrium](./examples/gams/mpsge)
 * Energy: [AC optimal power flow](./examples/optmod/acopf), [DC optimal power flow](./examples/optmod/dcopf), [gas trade](./examples/gams/gtm), [unit commitment](./examples/jump/unit_commitment)
-* Climate policy: [dice](./examples/gams/dice)
+* Climate policy: [Dice model](./examples/gams/dice)
+* Macroeconomics [computable general equilibrium](./examples/gams/mpsge)
 * Resource allocation: [knapsack problem](./examples/jump/knapsack)
 * Games: [sudoku](./examples/jump/sudoku)
 
