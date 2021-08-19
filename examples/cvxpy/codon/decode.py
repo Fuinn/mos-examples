@@ -4,6 +4,11 @@
 import cvxpy
 import numpy as np
 import json
+from itertools import compress
+
+
+#@ Input Object: MIP
+MIP = True
 
 #@ Input File: D_file
 D_file = 'D.npy'
@@ -25,7 +30,7 @@ sequences=json.load(s_file)
 aa_idx = 'ACDEFGHIKLMNPQRSTVWY*-'
 
 
-
+#@ Helper Object: O
 O = {i: np.zeros((len(sequences[0]), 22)) for i in range(len(sequences))}
 for i in O.keys():
     seq = sequences[i]
@@ -36,6 +41,8 @@ O_ = np.zeros((len(sequences),len(sequences[0]) * 22))
 for i in O:
     O_[i] = O[i].ravel()
 
+for i in range(len(O)):
+    O[i] = O[i].tolist()
 
 # Extract number of codons and number of amino acid options
 
@@ -55,17 +62,25 @@ n_var_pos = len(O[0])
 lib_lim = 6
 
 
+if MIP == True:
+    boolean_switch = True
+    nneg_switch = False
+else:
+    boolean_switch = False
+    nneg_switch = True
+
+
 # Set up variables
 
 #@ Variable: t
 #@ Description: description
 #@ Labels: targets
-t = cvxpy.Variable(n_targets, nonneg=True, boolean=False)
+t = cvxpy.Variable(n_targets, nonneg=nneg_switch, boolean=boolean_switch)
 targets = dict([(i, sequences[i]) for i in range(n_targets)])
 
 #@ Variable: G
 #@ Labels: G_labels
-G = cvxpy.Variable((n_var_pos, n_codons), nonneg=True, boolean=False)
+G = cvxpy.Variable((n_var_pos, n_codons), nonneg=nneg_switch, boolean=boolean_switch)
 
 G_labels = {}
 for i in range(n_var_pos):
@@ -75,7 +90,7 @@ for i in range(n_var_pos):
 
 #@ Variable: B
 #@ Labels: targets
-B = cvxpy.Variable(n_targets, nonneg=True, boolean=False)
+B = cvxpy.Variable(n_targets, nonneg=nneg_switch, boolean=boolean_switch)
 
 #@ Function: C
 #@ Labels: C_labels
@@ -142,28 +157,33 @@ constraints.append(cover_lb)
 constraints.append(oligo_ub)
 constraints.append(oligo_lb)
 constraints.append(library)
-constraints.append(t<=1)
-constraints.append(G<=1)
-constraints.append(B<=1)
+#constraints.append(t<=1)
+#constraints.append(G<=1)
+#constraints.append(B<=1)
 
 problem = cvxpy.Problem(cvxpy.Maximize(objective), constraints)
 
 #@ Solver: solver
 #@ Description: Solving the problem
-solver = "ECOS"
+if MIP == True:
+    solver = "ECOS_BB"
+else:
+    solver = "ECOS"
 
 problem.solve(solver=solver, max_iters=1000, verbose=True)
 
 
-
+#@ Helper object: solution
 # Make all variables available within a dictionary
+tvl = t.value.tolist()
 solution = {
-    'binary_coverage': t.value,
-    'coverage_count': np.sum(B.value),
-    'codon_selection': G.value,
-    'problem': problem
+    'binary_coverage': tvl,
+    'covered_sequences': list(compress(sequences,[round(i) for i in tvl])),
+    'coverage_count': np.sum(B.value).tolist(),
+    'codon_selection': G.value.tolist(),
+    'codon_selected': np.max(G.value,axis=1).tolist(),    
 }
-    
+# last step is to only return indices of G where 1 for each pos, rather than what is returned now    
 
 print(solution)
 
