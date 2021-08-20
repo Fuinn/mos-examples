@@ -1,13 +1,15 @@
 #@ Model: Degenerate Codon Design
-#@ Description: Adaptation for demonstration purposes from https://github.com/OrensteinLab/DeCoDe
+#@ Description: Adaptation for demonstration purposes from https://github.com/OrensteinLab/DeCoDe. Accuracy of this implementation not yet verified.
 
 import cvxpy
 import numpy as np
 import json
+import pprint
 from itertools import compress
 
 
 #@ Input Object: MIP
+#@ Description: Boolean switch: True = MIP, False = relaxed to a linear program
 MIP = True
 
 #@ Input File: D_file
@@ -73,12 +75,13 @@ else:
 # Set up variables
 
 #@ Variable: t
-#@ Description: description
+#@ Description: An indicator variable denoting whether target sequence $$t_i \in T$$ is present
 #@ Labels: targets
 t = cvxpy.Variable(n_targets, nonneg=nneg_switch, boolean=boolean_switch)
 targets = dict([(i, sequences[i]) for i in range(n_targets)])
 
 #@ Variable: G
+#@ Description: Variable indicating codon selected for each position
 #@ Labels: G_labels
 G = cvxpy.Variable((n_var_pos, n_codons), nonneg=nneg_switch, boolean=boolean_switch)
 
@@ -89,6 +92,7 @@ for i in range(n_var_pos):
 
 
 #@ Variable: B
+#@ Description: Indicator of whether target sequence can be encoded
 #@ Labels: targets
 B = cvxpy.Variable(n_targets, nonneg=nneg_switch, boolean=boolean_switch)
 
@@ -157,9 +161,10 @@ constraints.append(cover_lb)
 constraints.append(oligo_ub)
 constraints.append(oligo_lb)
 constraints.append(library)
-#constraints.append(t<=1)
-#constraints.append(G<=1)
-#constraints.append(B<=1)
+if MIP == False:
+    constraints.append(t<=1)
+    constraints.append(G<=1)
+    constraints.append(B<=1)
 
 problem = cvxpy.Problem(cvxpy.Maximize(objective), constraints)
 
@@ -170,20 +175,25 @@ if MIP == True:
 else:
     solver = "ECOS"
 
-problem.solve(solver=solver, max_iters=1000, verbose=True)
+problem.solve(solver=solver, max_iters=1000, mi_max_iters=25, verbose=True)
 
 
 #@ Helper object: solution
 # Make all variables available within a dictionary
 tvl = t.value.tolist()
+gvl = G.value.tolist()
+cselected = []
+for i in gvl:
+    cselected.append([idx for idx,element in enumerate(i) if element>=0.1])
 solution = {
     'binary_coverage': tvl,
     'covered_sequences': list(compress(sequences,[round(i) for i in tvl])),
     'coverage_count': np.sum(B.value).tolist(),
-    'codon_selection': G.value.tolist(),
-    'codon_selected': np.max(G.value,axis=1).tolist(),    
+    'objective_value': objective.value,        
+    'codon_indices_selected': cselected,
 }
-# last step is to only return indices of G where 1 for each pos, rather than what is returned now    
 
-print(solution)
+
+pp = pprint.PrettyPrinter()
+pp.pprint(solution)
 
