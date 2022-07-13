@@ -72,7 +72,7 @@ def openfac_(model, i, j):
     return model.x[i,j] <= model.y[i]
 model.openfac = pyo.Constraint(model.M, model.N, rule=openfac_)
 
-#@ Input File: data
+#@ Input File: pmedian
 #@ Description: input file with problem data
 data = 'pmedian.dat'
 
