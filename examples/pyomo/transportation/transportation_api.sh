@@ -1,12 +1,14 @@
-TOKEN=$(mosctl --url 'http://localhost:8000/api' user get-token $1 $2 2>&1)
+URL='http://localhost:8000/api'
+TOKEN=$(mosctl --url $URL user get-token $1 $2 2>&1)
 
-mosctl --url 'http://localhost:8000/api' --token $TOKEN model --name 'Transportation' delete
 
-mosctl --url 'http://localhost:8000/api' --token $TOKEN model new 'transportation.py'
+mosctl --url $URL --token $TOKEN model --name 'Transportation' delete
 
-mosctl --url 'http://localhost:8000/api' --token $TOKEN model --name 'Transportation' run
+mosctl --url $URL --token $TOKEN model new 'transportation.py'
 
-mosctl --url 'http://localhost:8000/api' --token $TOKEN model --name 'Transportation' get-status
+mosctl --url $URL --token $TOKEN model --name 'Transportation' run
 
-mosctl --url 'http://localhost:8000/api' --token $TOKEN model --name 'Transportation' get-function-state eCost
+mosctl --url $URL --token $TOKEN model --name 'Transportation' get-status
+
+mosctl --url $URL --token $TOKEN model --name 'Transportation' get-function-state eCost
 
