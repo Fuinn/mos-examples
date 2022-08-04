@@ -1,4 +1,15 @@
-URL='http://localhost:8000/api'
+#!/bin/bash
+
+URL=$3
+if [ "$#" -ne 3 ]; then
+    URL='http://localhost:8000/api'
+    if [ "$#" -ne 2 ]; then
+	echo "Please enter first argument as username, second argument as password, and third argument (optional) as url."
+	echo "Default url is http://localhost:8000/api"
+	exit 2
+    fi
+fi
+
 TOKEN=$(mosctl --url $URL user get-token $1 $2 2>&1)
 
 
