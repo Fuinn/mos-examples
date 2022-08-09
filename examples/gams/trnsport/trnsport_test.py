@@ -9,7 +9,7 @@ def test_trnsport():
     interface = Interface()
 
     # Delete model
-    interface.delete_model_with_name('A Transportation Problem')
+    interface.delete_model_with_name('Transportation Model')
 
     # New model
     model = interface.new_model('./examples/gams/trnsport/trnsport.gms')
