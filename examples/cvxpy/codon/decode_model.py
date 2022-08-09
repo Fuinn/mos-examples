@@ -10,7 +10,7 @@ from itertools import compress
 
 #@ Input Object: MIP
 #@ Description: Boolean switch: True = MIP, False = relaxed to a linear program
-MIP = True
+MIP = False
 
 #@ Input File: D_file
 D_file = 'D.npy'
@@ -197,3 +197,6 @@ solution = {
 pp = pprint.PrettyPrinter()
 pp.pprint(solution)
 
+if MIP==False:
+    print("*****")
+    print("Solved relaxed linear program for testing purposes")    
