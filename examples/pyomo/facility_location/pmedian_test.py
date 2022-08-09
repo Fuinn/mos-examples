@@ -12,7 +12,7 @@ def test_facility_location():
     interface.delete_model_with_name('Facility Location')
 
     # New model
-    model = interface.new_model('./examples/pyomo/facility_location/pmedian+model.py')
+    model = interface.new_model('./examples/pyomo/facility_location/pmedian_model.py')
 
     # Get model by name
     model = interface.get_model_with_name('Facility Location')
