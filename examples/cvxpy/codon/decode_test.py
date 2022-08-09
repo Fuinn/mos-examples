@@ -19,7 +19,7 @@ def test_codon():
     model = interface.get_model_with_name("Degenerate Codon Design")
 
     # Set inputs
-    model.set_interface_object('MIP', True)
+    model.set_interface_object('MIP', False)
 
     model.set_interface_file('D_file', './examples/cvxpy/codon/D.npy')
 
