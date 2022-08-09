@@ -39,7 +39,6 @@ The model may then be specified, adjusted, and solved through the ``*test.*`` fi
 In Python, install pytest and execute the following command from the root directory of the mos-examples repository:
 ```
 pytest -v --show-capture=no
-
 ```
 
 ## Contributing
