@@ -1,31 +1,34 @@
-using Pkg
-Pkg.activate(".") 
-
 import DotEnv
 DotEnv.config()
 
 using MOSInterface
 
-# Interface
-interface = Interface()
+@testset "Sudoku" begin
 
-# Delete model
-delete_model_with_name(interface, "Sudoku JuMP Model")
+    # Interface
+    interface = Interface()
 
-# New model
-model = new_model(interface, "./examples/jump/sudoku/sudoku_model.jl")
+    # Delete model
+    delete_model_with_name(interface, "Sudoku JuMP Model")
 
-# Get model
-model = get_model_with_name(interface, "Sudoku JuMP Model")
+    # New model
+    model = new_model(interface, "./examples/jump/sudoku/sudoku_model.jl")
 
-# Set inputs
-set_interface_file(model, "initial_grid_file", "./examples/jump/sudoku/data.csv")
+    # Get model
+    model = get_model_with_name(interface, "Sudoku JuMP Model")
 
-# Show info
-@assert(get_name(model) == "Sudoku JuMP Model")
-@assert(get_system(model) == "jump")
-@assert(get_status(model) == "created")
+    # Set inputs
+    set_interface_file(model, "initial_grid_file", "./examples/jump/sudoku/data.csv")
 
-# Solve
-MOSInterface.run(model)
-@assert(get_status(model) == "success")
+    # Show info
+    @test get_name(model) == "Sudoku JuMP Model"
+    @test get_system(model) == "jump"
+    @test get_status(model) == "created"
+
+    # Solve
+    MOSInterface.run(model)
+
+    # Status
+    @test get_status(model) == "success"
+
+end

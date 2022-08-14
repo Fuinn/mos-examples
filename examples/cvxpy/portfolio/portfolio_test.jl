@@ -1,33 +1,34 @@
-using Pkg
-Pkg.activate(".") 
-
 import DotEnv
 DotEnv.config()
 
 using MOSInterface
 
-# Interface
-interface = Interface()
+@testset "Portfolio" begin
 
-# Delete model
-delete_model_with_name(interface, "Portfolio Model")
+    # Interface
+    interface = Interface()
 
-# New model
-model = new_model(interface, "./examples/cvxpy/portfolio/portfolio_model.py")
+    # Delete model
+    delete_model_with_name(interface, "Portfolio Model")
 
-# Get model
-model = get_model_with_name(interface, "Portfolio Model")
+    # New model
+    model = new_model(interface, "./examples/cvxpy/portfolio/portfolio_model.py")
 
-# Set inputs
-set_interface_object(model, "L", 2)
-set_interface_object(model, "gamma", 0.1)
-set_interface_file(model, "stockdata", "examples/cvxpy/portfolio/stockdata.csv")
+    # Get model
+    model = get_model_with_name(interface, "Portfolio Model")
 
-@assert(get_name(model) == "Portfolio Model")
-@assert(get_system(model) == "cvxpy")
-@assert(get_status(model) == "created")
+    # Set inputs
+    set_interface_object(model, "L", 2)
+    set_interface_object(model, "gamma", 0.1)
+    set_interface_file(model, "stockdata", "examples/cvxpy/portfolio/stockdata.csv")
 
-# Solve
-MOSInterface.run(model)
+    @test get_name(model) == "Portfolio Model"
+    @test get_system(model) == "cvxpy"
+    @test get_status(model) == "created"
 
-@assert(get_status(model) == "success")
+    # Solve
+    MOSInterface.run(model)
+
+    @test get_status(model) == "success"
+
+end
