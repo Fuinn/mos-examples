@@ -40,12 +40,12 @@ The model may then be specified, adjusted, and solved through the ``*test.*`` fi
 
 We assume here that MOS is running and that the necessary environment variables have been defined for using MOS via the Python and Julia interfaces.
 
-In Python, install [pytest](https://docs.pytest.org/en/7.1.x/) and the [MOS Python interface](https://github.com/Fuinn/mos-interface-py), and execute the following command from the root directory of the mos-examples repository:
+For Python, install [pytest](https://docs.pytest.org/en/7.1.x/) and the [MOS Python interface](https://github.com/Fuinn/mos-interface-py), and execute the following command from the root directory of the mos-examples repository:
 ```
 pytest -v --show-capture=no
 ```
 
-In Julia, install the [MOS Julia interface](https://github.com/Fuinn/mos-interface-jl), and execute the following command from the root directory of the mos-examples repository:
+For Julia, install the [MOS Julia interface](https://github.com/Fuinn/mos-interface-jl), and execute the following command from the root directory of the mos-examples repository:
 ```
 julia runtests.jl
 ```
