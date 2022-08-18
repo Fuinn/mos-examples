@@ -5,6 +5,7 @@ my_tests = [
     "./examples/cvxpy/portfolio/portfolio_test.jl",
     "./examples/jump/sudoku/sudoku_test.jl",
     "./examples/jump/unit_commitment/unit_commitment_test.jl",
+    "./examples/jump/simple_mip/simple_mip_test.jl",    
 ]
 
 println("Running tests:")
