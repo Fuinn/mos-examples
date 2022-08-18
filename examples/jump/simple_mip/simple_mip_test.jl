@@ -11,7 +11,7 @@ using MOSInterface
     delete_model_with_name(interface, "Simple MIP JuMP Model")
 
     # New model
-    model = new_model(interface, "./examples/jump/simple_mip/simple_mip.jl")
+    model = new_model(interface, "./examples/jump/simple_mip/simple_mip_model.jl")
 
     # Get model
     model = get_model_with_name(interface, "Simple MIP JuMP Model")

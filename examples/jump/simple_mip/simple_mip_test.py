@@ -18,7 +18,7 @@ def test_simple_mip():
     model = interface.get_model_with_name('Simple MIP JuMP Model')
 
     # Set inputs
-    model.set_input_object('lower_bound', 1,2)
+    model.set_interface_object('lower_bound', 1.2)
 
     # Solve 
     model.run()
