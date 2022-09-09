@@ -5,7 +5,7 @@ load_dotenv(find_dotenv())
 from mos.interface import Interface
 
 
-def test_portfolio():
+def test_cfmm():
 
     # Interface
     interface = Interface()
@@ -35,4 +35,4 @@ def test_portfolio():
 
 
 if __name__ == '__main__':
-    test_portfolio()
+    test_cfmm()
