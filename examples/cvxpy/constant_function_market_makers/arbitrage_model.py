@@ -57,9 +57,15 @@ for l in local_indices:
 
 # Build variables
 #@ Variable: deltas
+#@ Labels: labels_locali
 deltas = [cp.Variable(len(l), nonneg=True) for l in local_indices]
 #@ Variable: lambdas
+#@ Labels: labels_locali
 lambdas = [cp.Variable(len(l), nonneg=True) for l in local_indices]
+
+labels_locali = {}
+for i,l in enumerate(local_indices):
+    labels_locali[i] = dict([(j, 'L%d %d' % (i,k)) for j,k in enumerate(l)])
 
 #@ Function: psi
 #@ Description: coins out (objective function is to maximize the product of this function and 'market value')
@@ -70,6 +76,7 @@ obj = cp.Maximize(market_value @ psi)
 
 # Reserves after trade
 #@ Function: new_reserves
+#@ Labels: labels_locali
 new_reserves = [R + gamma_i*D - L for R, gamma_i, D, L in zip(reserves, fees, deltas, lambdas)]
 
 #@ Constraint: balancer_pool
