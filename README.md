@@ -18,6 +18,7 @@ Examples from:
 * Macroeconomics: [computable general equilibrium](./examples/gams/mpsge)
 * Resource allocation: [knapsack problem](./examples/jump/knapsack)
 * Games: [sudoku](./examples/jump/sudoku)
+* Crypto: [constant function market makers](./examples/cvxpy/constant_function_market_makers)
 * Biotechnology: [codon design](./examples/cvxpy/codon)
 
 ## Use with [MOS Frontend](http://mos.fuinn.ie)
