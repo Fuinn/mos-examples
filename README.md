@@ -20,6 +20,7 @@ Examples from:
 * Games: [sudoku](./examples/jump/sudoku)
 * Crypto: [constant function market makers](./examples/cvxpy/constant_function_market_makers)
 * Biotechnology: [codon design](./examples/cvxpy/codon)
+* Healthcare: [nurse rostering](./examples/jump/rostering) (coming soon)
 
 ## Use with [MOS Frontend](http://mos.fuinn.ie)
 
