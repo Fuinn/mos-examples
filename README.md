@@ -1,10 +1,12 @@
 # mos-examples
 
-Optimization model examples ready for use with [MOS](https://fuinn.ie/mos).
+Optimization model examples ready for use with [MOS](https://fuinn.ie/mos). 
 
 Examples are arranged by modeling system (e.g. CVXPY, JuMP). Associated with each example are two file types, ``*model.*`` and ``*test.*``, along with any data files associated with the example.
 
 The ``*test.*`` files provide examples of how to access, adjust, and solve models via API and the MOS Interface packages.
+
+Feel free to contact us with any queries.
 
 ## Application areas
 
