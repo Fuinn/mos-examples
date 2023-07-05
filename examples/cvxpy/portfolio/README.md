@@ -5,6 +5,8 @@ Sample portfolio optimization model in cvxpy. Example from https://colab.researc
 
 This model allocates a financial portfolio by maximizing expected return less risk, subject to a leverage constraint. Stock performance data is randomly generated in this sample example.
 
+
+
 # Inputs
 
 * `stockdata`: csv file with stock information - number of stocks to choose from, and number of factors
