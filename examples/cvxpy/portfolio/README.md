@@ -10,8 +10,11 @@ $`\sqrt{3x-1}+(1+x)^2`$
 $`\max ret - \gamma risk`$
 
 $`ret=\mu^T w`$
+
 $`risk=Fw\Sigma+wD`$
+
 $`\sum w = 1`$
+
 $`||w||_1 \leq L`$
 
 
