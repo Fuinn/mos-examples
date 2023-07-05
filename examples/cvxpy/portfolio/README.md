@@ -14,5 +14,5 @@ This model allocates a financial portfolio by maximizing expected return less ri
 
 # Outputs
 
-* `output.txt': output file containing `w' vector, allocation of stocks
-* `allocation.png': plot displaying allocation of stocks
+* `output.txt`: output file containing `w` vector, allocation of stocks
+* `allocation.png`: plot displaying allocation of stocks
