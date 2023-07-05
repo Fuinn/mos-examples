@@ -11,7 +11,7 @@ $$ret=\mu^T w$$
 
 $$risk=Fw\Sigma+wD$$
 
-$$\sum_i w_i = 1$$
+$$1^T w = 1$$
 
 $$||w||_1 \leq L$$
 
