@@ -1,11 +1,11 @@
 # Financial Portfolio Model
-Sample portfolio optimization model in cvxpy. Example from https://colab.research.google.com/github/cvxgrp/cvx_short_course/blob/master/applications/portfolio_optimization.ipynb
+Sample portfolio optimization model in cvxpy. Example from https://github.com/cvxgrp/cvx_short_course/blob/master/book/docs/applications/notebooks/portfolio_optimization.ipynb
 
 # Overview
 
 This model allocates a financial portfolio by maximizing expected return less risk, subject to a leverage constraint. Stock performance data is randomly generated in this sample example.
 
-$$\max ret - \gamma risk$$
+$$\max_w (ret - \gamma risk)$$
 
 $$ret=\mu^T w$$
 
