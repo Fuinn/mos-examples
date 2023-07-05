@@ -7,7 +7,7 @@ This model allocates a financial portfolio by maximizing expected return less ri
 
 $`\sqrt{3x-1}+(1+x)^2`$
 
-$`\max ret - \gamma risk`$
+$$\max ret - \gamma risk$$
 
 $`ret=\mu^T w`$
 
