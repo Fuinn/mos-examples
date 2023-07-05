@@ -6,7 +6,7 @@ Examples are arranged by modeling system (e.g. CVXPY, JuMP). Associated with eac
 
 The ``*test.*`` files provide examples of how to access, adjust, and solve models via API and the MOS Interface packages.
 
-Feel free to contact us if any queries.
+Feel free to contact us with any queries.
 
 ## Application areas
 
