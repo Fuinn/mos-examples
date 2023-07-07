@@ -6,7 +6,7 @@ Machine Learning: Lasso Regression. Example from https://www.cvxpy.org/examples/
 # Overview
 
 
-Finds the regression coefficients ($\beta$) that minimize the following regularized function:
+Given feature data $X$ and target data $Y$, this model finds the regression coefficients ($\beta$) that minimize the following regularized function:
 
 $$\min (\beta X - Y)+\lambda||\beta||$$
 
@@ -14,9 +14,8 @@ $$\min (\beta X - Y)+\lambda||\beta||$$
 
 # Inputs
 
-* `stockdata`: csv file with stock information - number of stocks to choose from, and number of factors
-* `L`: leverage limit
-* `gamma`: risk aversion parameter
+* $\lambda$: regularization parameter
+* Feature and target data, $X$ and $Y$, are randomized in this example
 
 
 # Outputs
