@@ -19,9 +19,9 @@ $$x_{ij}\geq 0 \quad\forall i,j$$
 
 * $s_i$: supply from each of $m$ warehouses
 * $d_j$: demand from each of $g$ locations
-* $c_ij$: cost of transportation between supply $i$ and demand $j$
+* $c_{ij}$: cost of transportation between supply $i$ and demand $j$
 
 
 # Outputs
 
-* $x_ij$: assignment between supply $i$ and demand $j$
+* $x_{ij}$: assignment between supply $i$ and demand $j$
