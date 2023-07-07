@@ -18,7 +18,7 @@ $$x_{ij}\geq 0 \quad\forall i,j$$
 # Inputs
 
 * $s_i$: supply from each of $m$ warehouses
-* $d_j$: demand from each of $n$ locations
+* $d_j$: demand from each of $n$ retailer locations
 * $c_{ij}$: cost of transportation between supply $i$ and demand $j$
 
 
