@@ -3,7 +3,7 @@ Machine Learning: Lasso Regression. Example from https://www.cvxpy.org/examples/
 
 $$\min (\beta X - Y)+\lambda||\beta||$$
 
-Find the regression coefficients ($`\beta$`) that minimize the above regularized function
+Find the regression coefficients ($\beta$) that minimize the above regularized function
 
 
 # Overview
