@@ -5,7 +5,7 @@ Model to find minimum cost assignment between warehouses and retailers, given su
 
 # Overview
 
-$$\min \sum_{i=1}^{m}\sum_{j=1}^{n}c_{ij}x_{ij}$$
+$$\min \sum_{i=1}^{n}\sum_{j=1}^{m}c_{ij}x_{ij}$$
 
 $$\sum_{j=1}^m x_{ij}=s_i,\quad\forall i=1,2,\dots,m$$
 
@@ -17,11 +17,11 @@ $$x_{ij}\geq 0 \quad\forall i,j$$
 
 # Inputs
 
-* $\lambda$: regularization parameter
-* Feature and target data, $X$ and $Y$, are randomized in this example
+* $s_i$: supply from each of $m$ warehouses
+* $d_j$: demand from each of $g$ locations
+* $c_ij$: cost of transportation between supply $i$ and demand $j$
 
 
 # Outputs
 
-* Regression coefficients $\beta$
-* Training and testing Mean Square Errors (MSE)
+* $x_ij$: assignment between supply $i$ and demand $j$
