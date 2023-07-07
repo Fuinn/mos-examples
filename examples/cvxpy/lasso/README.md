@@ -20,5 +20,5 @@ $$\min (\beta X - Y)+\lambda||\beta||$$
 
 # Outputs
 
-* `output.txt`: output file containing `w` vector, the allocation of stocks
-* `allocation.png`: plot displaying allocation of stocks
+* Regression coefficients $\beta$
+* Training and testing Mean Square Errors (MSE)
