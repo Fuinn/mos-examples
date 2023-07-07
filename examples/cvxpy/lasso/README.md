@@ -1,24 +1,14 @@
 # Lasso Regression
 Machine Learning: Lasso Regression. Example from https://www.cvxpy.org/examples/machine_learning/lasso_regression.html
 
-$$\min (\beta X - Y)+\lambda||\beta||$$
-
-Find the regression coefficients ($\beta$) that minimize the above regularized function
 
 
 # Overview
 
-This model allocates a financial portfolio by maximizing expected return less risk, subject to a leverage constraint. Stock performance data is randomly generated in this sample example.
 
-$$\max_w (ret - \gamma risk)$$
+Finds the regression coefficients ($\beta$) that minimize the following regularized function:
 
-$$ret=\mu^T w$$
-
-$$risk=Fw\Sigma+wD$$
-
-$$1^T w = 1$$
-
-$$||w||_1 \leq L$$
+$$\min (\beta X - Y)+\lambda||\beta||$$
 
 
 
