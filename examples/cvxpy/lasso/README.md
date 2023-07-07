@@ -1,5 +1,5 @@
 # Lasso Regression
-Machine Learning: Lasso Regression. Example from cvxpy.org/examples/machine_learning/lasso_regression.html
+Machine Learning: Lasso Regression. Example from https://www.cvxpy.org/examples/machine_learning/lasso_regression.html
 
 $$\min (\beta X - Y)+\lambda||\beta||$$
 
