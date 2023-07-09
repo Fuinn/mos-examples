@@ -11,7 +11,7 @@ This formulation locates the $p$ facilities such that the demand weighted averag
 
 # Inputs
 
-* pmedian.dat: input file where input parameters for number of facilities, $p$, number of candidate locations, $m$, and number of demand locations, $n$, are assigned.
+* `pmedian.dat`: input file where input parameters for number of facilities, $p$, number of candidate locations, $m$, and number of demand locations, $n$, are assigned.
 * The demand weighted distance is randomly generated in this example.
 
 
