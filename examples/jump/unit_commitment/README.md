@@ -4,9 +4,11 @@ Adapted from https://github.com/pajalevi/Stochastic_UC_model_julia.
 
 # Overview
 
-Find the dispatch schedule, p, for generators g, that minimizes costs across time t, and scenarios o, subject to technical constraints, a sample of which are below.
+Find the dispatch schedule, $p$, for generators $g$, that minimizes costs across time $t$ and scenarios $o$
 
-$$\min\sum_{g,t,o}(start\_cost_{g,t,o}+p_{g,t,o} varcost_g)$$
+$$\min\sum_{g,t,o}(startcost_{g,t,o}+p_{g,t,o} varcost_g)$$
+
+Subject to technical constraints, a sample of which are below.
 
 $$\sum_g p_{g,t,o}={dem}_t\quad\forall t,o$$
 
