@@ -1,10 +1,10 @@
-# Dice 99 Climate Policy Model
-GAMS Code for DICE-99. Adapted from: Nordhaus and Boyer, Warming the World, October 25 1999,   Appendix E.
+# DICE-99 Climate Policy Model
+GAMS Code for DICE-99. Adapted from: `Nordhaus and Boyer, Warming the World (1999), Appendix E/.
 
 # Overview
-Utility is maximized subject to constraints a sample of which is shown below. Utility increases as consumption (C) rises, which in turn is constrained by economic production (Y), which in turn is constrained by both abatements costs (f(mu)) and temperature increases (T).
+Utility ($U$) is maximized subject to constraints a sample of which is shown below. Utility increases as consumption ($C$) rises, which in turn is constrained by economic production ($Y$), which in turn is constrained by both abatements costs ($f(mu)$) and temperature increases ($T$).
 
-$$\max UTILITY=\sum_t {RR}_t L_t \log(C_t / L_t)$$
+$$\max U=\sum_t {RR}_t L_t \log(C_t / L_t)$$
 
 $$C_t=Y_t-I_t$$
 
