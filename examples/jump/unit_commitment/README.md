@@ -12,7 +12,7 @@ Subject to technical constraints, a sample of which are below.
 
 $$\sum_g p_{g,t,o}={dem}_t\quad\forall t,o$$
 
-$$start\_cost_{g,t,o}\geq v_{g,t,o}startup_g\forall g,t,o$$
+$$startcost_{g,t,o}\geq v_{g,t,o}startup_g\forall g,t,o$$
 
 $$pmin_g u_{g,t,o} \leq p_{g,t,o} \leq pmax_g u_{g,t,o}$$
 
