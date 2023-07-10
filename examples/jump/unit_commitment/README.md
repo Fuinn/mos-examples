@@ -18,5 +18,5 @@ $$pmin_g u_{g,t,o} \leq p_{g,t,o} \leq pmax_g u_{g,t,o}\quad\forall g,t,o$$$$
 
 $$v_{g,t+1,o}=u_{g,t+1,o}-u_{g,t,o}\quad\forall g,t,o$$$$
 
-$$u,v\in(0,1),p,s\in\mathbb{R}$$
+$$u,v\in(0,1);p,s\in\mathbb{R}$$
 
