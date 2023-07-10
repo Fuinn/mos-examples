@@ -20,17 +20,3 @@ $$v_{g,t+1,o}=u_{g,t+1,o}-u_{g,t,o}\quad\forall g,t,o$$$$
 
 $$u,v\in(0,1),p,s\in\mathbb{R}$$
 
-
-
-
-# Inputs
-
-* `stockdata`: csv file with stock information - number of stocks to choose from, and number of factors
-* `L`: leverage limit
-* `gamma`: risk aversion parameter
-
-
-# Outputs
-
-* `output.txt`: output file containing `w` vector, the allocation of stocks
-* `allocation.png`: plot displaying allocation of stocks
