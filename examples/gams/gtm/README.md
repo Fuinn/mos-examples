@@ -1,6 +1,6 @@
 # An International Gas Trade Model
 
-Manne, A S, and Beltramo, M A, GTM: An International Gas Trade Model , International Energy Program Report. Stanford University, 1984.
+Model associated with the paper: `Manne, A S, and Beltramo, M A, GTM: An International Gas Trade Model , International Energy Program Report. Stanford University, 1984`.
 
 
 # Overview
