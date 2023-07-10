@@ -14,9 +14,9 @@ $$\sum_g p_{g,t,o}={dem}_t\quad\forall t,o$$
 
 $$startcost_{g,t,o}\geq v_{g,t,o}startup_g\quad\forall g,t,o$$
 
-$$pmin_g u_{g,t,o} \leq p_{g,t,o} \leq pmax_g u_{g,t,o}$$
+$$pmin_g u_{g,t,o} \leq p_{g,t,o} \leq pmax_g u_{g,t,o}\quad\forall g,t,o$$$$
 
-$$v_{g,t+1,o}=u_{g,t+1,o}-u_{g,t,o}$$
+$$v_{g,t+1,o}=u_{g,t+1,o}-u_{g,t,o}\quad\forall g,t,o$$$$
 
 $$u,v\in(0,1),p\in\mathbb{R}$$
 
