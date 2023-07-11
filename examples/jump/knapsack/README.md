@@ -1,22 +1,21 @@
 # Knapsack Model
 
-Sample knapsack model in JumP.
+A knapsack model implemented in JumP. This canonical model 
 
 $$\max p^T x$$
 
 $$w^T x \leq k$$
 
-$$x\in\{0,1\}$$
+$$x\in$${0,1}
 
 
 # Inputs
 
-* `stockdata`: csv file with stock information - number of stocks to choose from, and number of factors
-* `L`: leverage limit
-* `gamma`: risk aversion parameter
+* `profit_file`: json file containing $p$ vector
+* `weight`: $w$ vector
+* `capacity`: capacity of knapsack, $k$
 
 
 # Outputs
 
-* `output.txt`: output file containing `w` vector, the allocation of stocks
-* `allocation.png`: plot displaying allocation of stocks
+* `output.txt`: output file containing `x` vector, the choice of items
