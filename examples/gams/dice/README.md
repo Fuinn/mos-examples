@@ -11,4 +11,4 @@ $$C_t=Y_t-I_t$$
 $$Y_t=\alpha_t L_t^{1-\gamma} K_t^{\gamma} \frac{1-f(\mu_t)}{1+a_1{T}_t+a_2{T}_t^2}$$
 
 
-Where $L_t$, $I_t$, and $T_t$ are model variables representing labour, investment, and temperature respectively. $r_t$ and $\alpha_t$ are input parameters representing the discount rate and total factor productivity respectively.
+Where $L_t$, $I_t$, and $T_t$ are model variables representing labour and investment respectively. While $r_t$ and $\alpha_t$ are input parameters representing the discount rate and total factor productivity respectively.
