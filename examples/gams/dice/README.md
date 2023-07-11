@@ -11,16 +11,4 @@ $$C_t=Y_t-I_t$$
 $$Y_t=\alpha_t L_t^{1-\gamma} K_t^{\gamma} \frac{1-f(\mu_t)}{1+a_1{T}_t+a_2{T}_t^2}$$
 
 
-
-
-# Inputs
-
-* `stockdata`: csv file with stock information - number of stocks to choose from, and number of factors
-* `L`: leverage limit
-* `gamma`: risk aversion parameter
-
-
-# Outputs
-
-* `output.txt`: output file containing `w` vector, the allocation of stocks
-* `allocation.png`: plot displaying allocation of stocks
+Where $L_t$, $I_t$, and $T_t$ are model variables representing labour, investment, and temperature respectively. $r_t$ and $\alpha_t$ are input parameters representing the discount rate and total factor productivity respectively.
