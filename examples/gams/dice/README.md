@@ -4,7 +4,7 @@ GAMS Code for DICE-99. Adapted from: `Nordhaus and Boyer, Warming the World (199
 # Overview
 Utility ($U$) is maximized subject to constraints a sample of which is shown below. Utility increases as consumption ($C$) rises, which in turn is constrained by economic production ($Y$), which in turn is constrained by both abatements costs ($f$($\mu$)) and temperature increases ($T$).
 
-$$\max U=\sum_t {RR}_t L_t \log(\frac{C_t}{L_t})$$
+$$\max U=\sum_t {r}_t L_t \log(\frac{C_t}{L_t})$$
 
 $$C_t=Y_t-I_t$$
 
