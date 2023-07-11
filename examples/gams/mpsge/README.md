@@ -11,7 +11,7 @@ Goods $x$ and $y$ may only be purchased using funds obtained from labor sales. T
 
 $$x + y = LPROD . LS$$
 
-where goods x and y both have a price of unity at base year productivity and LPROD is an index of labor productivity. An increase in productivity is equivalent to a proportional decrease in the prices of $x$ and $y$. 
+where goods $x$ and $y$ both have a price of unity at base year productivity, $LS$ is labor supply, and $LPROD$ is an index of labor productivity. An increase in productivity is equivalent to a proportional decrease in the prices of $x$ and $y$. 
 
-Note in this version of MOS, that all prices and quantities from MPSGE come through as variables.
+Note in this version of MOS, that all prices and quantities from MPSGE are represented as variables.
 
