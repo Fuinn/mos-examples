@@ -8,7 +8,7 @@ $$\max U=\sum_t {r}_t L_t \log(\frac{C_t}{L_t})$$
 
 $$C_t=Y_t-I_t$$
 
-$$Y_t=a_t L_t^{1-\gamma} K_t^{\gamma} \frac{1-f(\mu_t)}{1+a_1{T}_t+a_2{T}_t^2}$$
+$$Y_t=\alpha_t L_t^{1-\gamma} K_t^{\gamma} \frac{1-f(\mu_t)}{1+a_1{T}_t+a_2{T}_t^2}$$
 
 
 
