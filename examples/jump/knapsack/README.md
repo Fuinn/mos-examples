@@ -6,22 +6,7 @@ $$\max p^T x$$
 
 $$w^T x \leq k$$
 
-$$x\in\{0,1\}^5$$
-
-# Overview
-
-This model allocates a financial portfolio by maximizing expected return less risk, subject to a leverage constraint. Stock performance data is randomly generated in this sample example.
-
-$$\max_w (ret - \gamma risk)$$
-
-$$ret=\mu^T w$$
-
-$$risk=Fw\Sigma+wD$$
-
-$$1^T w = 1$$
-
-$$||w||_1 \leq L$$
-
+$$x\in\{0,1\}$$
 
 
 # Inputs
