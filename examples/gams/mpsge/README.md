@@ -3,7 +3,7 @@
 Example 3 from https://www.gams.com/solvers/mpsge/gentle.htm
 
 # Overview
-This model investigates the labor-leisure decision. A single consumer is endowed with labor which is either supplied to the market or "repurchased" as leisure. The consumer utility function over market goods ($x$ and $y$) and leisure is Cobb-Douglas:
+This model investigates the labor-leisure decision. A single consumer is endowed with labor which is either supplied to the market or "repurchased" as leisure. The consumer utility function over market goods ($x$ and $y$) and leisure (L) is Cobb-Douglas:
 
 $$U(x,y,L) = ln(x) + ln(y) + ln(L)$$
 
