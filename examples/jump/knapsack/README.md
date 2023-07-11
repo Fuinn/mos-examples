@@ -6,7 +6,7 @@ $$\max p^T x$$
 
 $$w^T x \leq k$$
 
-$$x\in {0,1 } $$
+$$x\in \left{0,1 } $$
 
 
 # Inputs
