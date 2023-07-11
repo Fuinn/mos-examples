@@ -11,8 +11,8 @@ $$x\in \\{0,1\\}^n $$
 
 # Inputs
 
-* `profit_file`: json file containing $p$ vector
-* `weight`: $w$ vector
+* `profit_file`: json file containing $p$ vector, the profit/value of each item
+* `weight`: $w$ vector, the weight of each item
 * `capacity`: capacity of knapsack, $k$
 
 
