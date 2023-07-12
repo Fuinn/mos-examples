@@ -1,0 +1,3 @@
+param m := 10;
+param n := 6;
+param p := 3;
