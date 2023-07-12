@@ -11,18 +11,18 @@ Feel free to contact us with any queries.
 ## Application areas
 
 Examples from:
-* Finance: [portfolio allocation](./examples/cvxpy/portfolio)
-* Machine learning: [lasso regression](./examples/cvxpy/lasso)
-* Logistics: [transportation](./examples/cvxpy/transportation), [facility location](./examples/pyomo/facility_location)
-* Aerospace: [satellite scheduling](./examples/gams/satellite)
-* Energy: [AC optimal power flow](./examples/optmod/acopf), [DC optimal power flow](./examples/optmod/dcopf), [gas trade](./examples/gams/gtm), [unit commitment](./examples/jump/unit_commitment)
-* Climate policy: [Dice model](./examples/gams/dice)
-* Macroeconomics: [computable general equilibrium](./examples/gams/mpsge)
-* Resource allocation: [knapsack problem](./examples/jump/knapsack)
-* Games: [sudoku](./examples/jump/sudoku)
-* Crypto: [constant function market makers](./examples/cvxpy/constant_function_market_makers)
-* Biotechnology: [codon design](./examples/cvxpy/codon)
-* Healthcare: [nurse rostering](./examples/jump/rostering)
+* Finance: [portfolio allocation](./src/cvxpy/portfolio)
+* Machine learning: [lasso regression](./src/cvxpy/lasso)
+* Logistics: [transportation](./src/cvxpy/transportation), [facility location](./src/pyomo/facility_location)
+* Aerospace: [satellite scheduling](./src/gams/satellite)
+* Energy: [AC optimal power flow](./src/optmod/acopf), [DC optimal power flow](./src/optmod/dcopf), [gas trade](./src/gams/gtm), [unit commitment](./src/jump/unit_commitment)
+* Climate policy: [Dice model](./src/gams/dice)
+* Macroeconomics: [computable general equilibrium](./src/gams/mpsge)
+* Resource allocation: [knapsack problem](./src/jump/knapsack)
+* Games: [sudoku](./src/jump/sudoku)
+* Crypto: [constant function market makers](./src/cvxpy/constant_function_market_makers)
+* Biotechnology: [codon design](./src/cvxpy/codon)
+* Healthcare: [nurse rostering](./src/jump/rostering)
 
 ## Use with [MOS Frontend](http://mos.fuinn.ie)
 
