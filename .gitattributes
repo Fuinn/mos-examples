@@ -1,0 +1,4 @@
+src/optmod/acopf/ieee14.m -linguist-vendored
+src/optmod/acopf/ieee300.m -linguist-vendored
+src/optmod/dcopf/ieee14.m -linguist-vendored
+src/optmod/dcopf/ieee300.m -linguist-vendored
