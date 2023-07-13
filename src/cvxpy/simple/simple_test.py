@@ -13,7 +13,7 @@ def test_simple():
     interface.delete_model_with_name('Simple educational model')
 
     # New model
-    model = interface.new_model('./examples/cvxpy/simple/simple_model.py')
+    model = interface.new_model('./src/cvxpy/simple/simple_model.py')
 
     # Get model by name
     model = interface.get_model_with_name('Simple educational model')

@@ -13,7 +13,7 @@ def test_portfolio():
     interface.delete_model_with_name('Portfolio Model')
 
     # New model
-    model = interface.new_model('./examples/cvxpy/portfolio/portfolio_model.py')
+    model = interface.new_model('./src/cvxpy/portfolio/portfolio_model.py')
 
     # Get model by name
     model = interface.get_model_with_name('Portfolio Model')
@@ -21,7 +21,7 @@ def test_portfolio():
     # Set inputs
     model.set_interface_object('L', 2)
     model.set_interface_object('gamma', 0.1)
-    model.set_interface_file('stockdata', 'examples/cvxpy/portfolio/stockdata.csv')
+    model.set_interface_file('stockdata', './src/cvxpy/portfolio/stockdata.csv')
 
     assert(model.get_name() == 'Portfolio Model')
     assert(model.get_system() == 'cvxpy')

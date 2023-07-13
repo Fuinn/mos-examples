@@ -12,13 +12,13 @@ def test_facility_location():
     interface.delete_model_with_name('Facility Location')
 
     # New model
-    model = interface.new_model('./examples/pyomo/facility_location/pmedian_model.py')
+    model = interface.new_model('./src/pyomo/facility_location/pmedian_model.py')
 
     # Get model by name
     model = interface.get_model_with_name('Facility Location')
 
     # Set inputs
-    model.set_interface_file('data', './examples/pyomo/facility_location/pmedian.dat')
+    model.set_interface_file('data', './src/pyomo/facility_location/pmedian.dat')
 
     assert(model.get_system() == 'pyomo')
     assert(model.get_status() == 'created')

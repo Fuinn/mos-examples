@@ -12,14 +12,14 @@ def test_trnsport():
     interface.delete_model_with_name('Transportation Model')
 
     # New model
-    model = interface.new_model('./examples/gams/trnsport/trnsport.gms')
+    model = interface.new_model('./src/gams/trnsport/trnsport.gms')
 
     # Shot info
     model.show_components()
 
     # Set inputs
     model.set_interface_object('f', 90)
-    model.set_interface_file('d', './examples/gams/trnsport/d.inc')
+    model.set_interface_file('d', './src/gams/trnsport/d.inc')
 
     # Solve
     model.run()

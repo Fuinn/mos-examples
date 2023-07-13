@@ -12,7 +12,7 @@ using MOSInterface
     delete_model_with_name(interface, "Stochastic Unit Commitment")
 
     # New model
-    model = new_model(interface, "./examples/jump/unit_commitment/unit_commitment_model.jl")
+    model = new_model(interface, "./src/jump/unit_commitment/unit_commitment_model.jl")
 
     # Get model
     model = get_model_with_name(interface, "Stochastic Unit Commitment")

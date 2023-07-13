@@ -13,7 +13,7 @@ def test_lasso():
     interface.delete_model_with_name('Lasso')
 
     # New model
-    model = interface.new_model('./examples/cvxpy/lasso/lasso_model.py')
+    model = interface.new_model('./src/cvxpy/lasso/lasso_model.py')
 
     # Get model by name
     model = interface.get_model_with_name('Lasso')

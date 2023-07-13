@@ -9,7 +9,7 @@ import csv
 
 #@ Input File: stockdata
 #@ Description: input file with data on stocks and factors
-stockdata = open('./examples/cvxpy/portfolio/stockdata.csv','r')
+stockdata = open('./src/cvxpy/portfolio/stockdata.csv','r')
 row1 = next(csv.reader(stockdata))
 
 #@ Helper Object: n

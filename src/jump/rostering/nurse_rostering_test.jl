@@ -12,14 +12,14 @@ using MOSInterface
     delete_model_with_name(interface, "Nurse Rostering Model")
 
     # New model
-    model = new_model(interface, "./examples/jump/rostering/nurse_rostering_model.jl")
+    model = new_model(interface, "./src/jump/rostering/nurse_rostering_model.jl")
 
     # Get model
     model = get_model_with_name(interface, "Nurse Rostering Model")
 
     # Set inputs
     set_interface_object(model, "max_off", 4)
-    set_interface_file(model, "nurses_shifts_unavailable", "./examples/jump/rostering/out.csv")
+    set_interface_file(model, "nurses_shifts_unavailable", "./src/jump/rostering/out.csv")
 
     # Show info
     @test get_system(model) == "jump"

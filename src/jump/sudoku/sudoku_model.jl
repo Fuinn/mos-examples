@@ -5,7 +5,7 @@ using JuMP, Cbc, Test
 
 #@ Input File: initial_grid_file
 #@ Description: Initial grid file
-initial_grid_file = open("./examples/jump/sudoku/data.csv", "r")
+initial_grid_file = open("./src/jump/sudoku/data.csv", "r")
 
 #@ Helper Object: initial_grid
 #@ Description: Initial grid array

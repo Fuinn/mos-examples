@@ -12,7 +12,7 @@ def test_dice():
     interface.delete_model_with_name('DICE99')
 
     # New model
-    model = interface.new_model('./examples/gams/dice/dice99_295.gms')
+    model = interface.new_model('./src/gams/dice/dice99_295.gms')
 
     # Shot info
     model.show_components()

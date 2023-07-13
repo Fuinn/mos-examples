@@ -12,7 +12,7 @@ def test_transportation():
     interface.delete_model_with_name('Transportation Assignment')
 
     # New model
-    model = interface.new_model('./examples/cvxpy/transportation/transportation_model.py')
+    model = interface.new_model('./src/cvxpy/transportation/transportation_model.py')
 
     # Get model by name
     model = interface.get_model_with_name('Transportation Assignment')

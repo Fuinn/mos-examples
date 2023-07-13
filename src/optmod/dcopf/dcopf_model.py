@@ -8,7 +8,7 @@ import optalg
 
 #@ Input File: case
 #@ Description: Power flow case file
-case = open('./examples/optmod/dcopf/ieee14.m', 'r')
+case = open('./src/optmod/dcopf/ieee14.m', 'r')
 
 #@ Input Object: feastol
 #@ Description: Feasibiltiy tolerance

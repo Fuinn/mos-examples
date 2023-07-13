@@ -12,14 +12,13 @@ def test_knapsack():
     interface.delete_model_with_name('Knapsack Model')
 
     # New model
-    model = interface.new_model('./examples/jump/knapsack/knapsack_model.jl')
+    model = interface.new_model('./src/jump/knapsack/knapsack_model.jl')
 
     # Existing model by name
     model = interface.get_model_with_name('Knapsack Model')
 
     # Set inputs
-    model.set_interface_file('profit_file', 
-                    './examples/jump/knapsack/profit.json')
+    model.set_interface_file('profit_file', './src/jump/knapsack/profit.json')
     model.set_interface_object('weight',
                     [2, 8, 4, 2, 5])
     model.set_interface_object('capacity',

@@ -12,7 +12,7 @@ def test_unit_commitment():
     interface.delete_model_with_name('Stochastic Unit Commitment')
 
     # New model
-    model = interface.new_model('./examples/jump/unit_commitment/unit_commitment_model.jl')
+    model = interface.new_model('./src/jump/unit_commitment/unit_commitment_model.jl')
 
     # Existing model by name
     model = interface.get_model_with_name('Stochastic Unit Commitment')

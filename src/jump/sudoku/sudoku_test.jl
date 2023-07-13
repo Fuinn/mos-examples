@@ -12,13 +12,13 @@ using MOSInterface
     delete_model_with_name(interface, "Sudoku JuMP Model")
 
     # New model
-    model = new_model(interface, "./examples/jump/sudoku/sudoku_model.jl")
+    model = new_model(interface, "./src/jump/sudoku/sudoku_model.jl")
 
     # Get model
     model = get_model_with_name(interface, "Sudoku JuMP Model")
 
     # Set inputs
-    set_interface_file(model, "initial_grid_file", "./examples/jump/sudoku/data.csv")
+    set_interface_file(model, "initial_grid_file", "./src/jump/sudoku/data.csv")
 
     # Show info
     @test get_name(model) == "Sudoku JuMP Model"

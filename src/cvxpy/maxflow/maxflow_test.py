@@ -13,7 +13,7 @@ def test_maxflow():
     interface.delete_model_with_name('Max flow')
 
     # New model
-    model = interface.new_model('./examples/cvxpy/maxflow/maxflow_model.py')
+    model = interface.new_model('./src/cvxpy/maxflow/maxflow_model.py')
 
     # Get model by name
     model = interface.get_model_with_name('Max flow')

@@ -12,14 +12,14 @@ def test_nurse_rostering():
     interface.delete_model_with_name('Nurse Rostering Model')
 
     # New model
-    model = interface.new_model('./examples/jump/rostering/nurse_rostering_model.jl')
+    model = interface.new_model('./src/jump/rostering/nurse_rostering_model.jl')
 
     # Existing model by name
     model = interface.get_model_with_name('Nurse Rostering Model')
 
     # Set inputs
     model.set_interface_object('max_off', 4)
-    model.set_interface_file('nurses_shifts_unavailable', './examples/jump/rostering/out.csv')
+    model.set_interface_file('nurses_shifts_unavailable', './src/jump/rostering/out.csv')
 
     # Solve 
     model.run()

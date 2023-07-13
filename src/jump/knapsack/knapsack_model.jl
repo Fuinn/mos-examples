@@ -11,7 +11,7 @@ end
 
 #@ Input File: profit_file
 #@ Description: This is a sample input file
-profit_file = open("./examples/jump/knapsack/profit.json")
+profit_file = open("./src/jump/knapsack/profit.json")
 
 #@ Input Object: weight
 #@ Description: Weight of items, w

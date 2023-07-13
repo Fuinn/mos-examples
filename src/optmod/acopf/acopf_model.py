@@ -9,7 +9,7 @@ from optmod import VariableDict, Problem, minimize, cos, sin
 
 #@ Input File: case
 #@ Description: Power flow case file
-case = open('./examples/optmod/acopf/ieee14.m', 'r')
+case = open('./src/optmod/acopf/ieee14.m', 'r')
 
 #@ Input Object: feastol
 #@ Description: Feasibiltiy tolerance

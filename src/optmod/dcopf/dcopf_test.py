@@ -14,13 +14,13 @@ def test_dcpf():
     interface.delete_model_with_name('DCOPF Model')
 
     # New model
-    model = interface.new_model('./examples/optmod/dcopf/dcopf_model.py')
+    model = interface.new_model('./src/optmod/dcopf/dcopf_model.py')
 
     # Existing model by name
     model = interface.get_model_with_name('DCOPF Model')
 
     # Set inputs
-    model.set_interface_file('case', './examples/optmod/dcopf/ieee14.m')
+    model.set_interface_file('case', './src/optmod/dcopf/ieee14.m')
     model.set_interface_object('feastol', 1.5e-3)
 
     assert(model.get_name() == 'DCOPF Model')

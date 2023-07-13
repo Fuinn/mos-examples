@@ -14,7 +14,7 @@ def test_cfmm():
     interface.delete_model_with_name('Constant Function Market Makers')
 
     # New model
-    model = interface.new_model('./examples/cvxpy/constant_function_market_makers/arbitrage_model.py')
+    model = interface.new_model('./src/cvxpy/constant_function_market_makers/arbitrage_model.py')
 
     # Get model by name
     model = interface.get_model_with_name('Constant Function Market Makers')

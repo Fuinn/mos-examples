@@ -12,7 +12,7 @@ def test_simple_mip():
     interface.delete_model_with_name('Simple MIP JuMP Model')
 
     # New model
-    model = interface.new_model('./examples/jump/simple_mip/simple_mip_model.jl')
+    model = interface.new_model('./src/jump/simple_mip/simple_mip_model.jl')
 
     # Existing model by name
     model = interface.get_model_with_name('Simple MIP JuMP Model')
